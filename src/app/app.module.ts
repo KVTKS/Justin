@@ -3,7 +3,7 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import {Validators, FormBuilder, FormGroup } from '@angular/forms';
-
+import { HttpModule } from '@angular/http';
 
 import { MyApp } from './app.component';
 import { WelcomePage } from '../pages/welcome/welcome';
@@ -15,12 +15,14 @@ import {AttendancePage} from '../pages/attendance/attendance';
 import { ViewPelajarPage } from '../pages/view-pelajar/view-pelajar';
 import { ReportPage } from '../pages/report/report';
 import { CameraPage } from '../pages/camera/camera';
+import { SubjectPage } from '../pages/subject/subject';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Camera } from '@ionic-native/camera';
 import {ParallaxDirective} from '../directives/parallax/parallax';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { AuthserviceProvider } from '../providers/authservice/authservice';
 
 @NgModule({
   declarations: [
@@ -34,11 +36,12 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
     ViewPelajarPage,
     ReportPage,
     ParallaxDirective,
-    CameraPage
+    CameraPage,
+    SubjectPage
   ],
   imports: [
     BrowserModule,
-    HttpClientModule,
+    HttpModule,
     IonicModule.forRoot(MyApp),
   ],
   schemas: [
@@ -55,13 +58,15 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
     AttendancePage,
     ViewPelajarPage,
     ReportPage,
-    CameraPage
+    CameraPage,
+    SubjectPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     Camera,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
+    AuthserviceProvider,
   ]
 })
 export class AppModule {}
