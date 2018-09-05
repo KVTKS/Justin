@@ -9,5 +9,28 @@
 
 
 <ion-content padding>
+  <h1>Attendance</h1>
 
+  <ion-list>
+      <ion-item>
+        <ion-label>Sesi</ion-label>
+        <ion-select [(ngModel)]="Kelas">
+          <ion-option value="Sesi 1">1/2017</ion-option>
+          <ion-option value="Sesi 2">2/2017</ion-option>
+          <ion-option value="Sesi 3">1/2018</ion-option>
+          <ion-option value="Sesi 4">2/2018</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+
+    <ion-list>
+        <ion-item>
+          <ion-label>Kelas</ion-label>
+          <ion-select [(ngModel)]="Kelas">
+            <ion-option value="Kelas 1">Kelas 1</ion-option>
+            <ion-option value="Kelas 2">Kelas 2</ion-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+    
 </ion-content>
