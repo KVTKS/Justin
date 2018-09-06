@@ -1,4 +1,4 @@
-import { Http } from '@angular/http';
+import { Http,Headers } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { Injectable } from '@angular/core';
 /*
@@ -20,7 +20,7 @@ export class AuthserviceProvider {
     return new Promise((resolve, reject) => {
       let headers = new Headers({ 'Content-Type': 'application/json' });
       console.log(credentials);
-      this.http.post(this.apiUrl+'/'+type, JSON.stringify(credentials), {headers: { 'Content-Type': 'application/json' }})
+      this.http.post(this.apiUrl+'/'+type, JSON.stringify(credentials), {headers: headers})
         .subscribe(res => {
           resolve(res.json());
         }, (err) => {
